@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geneviève Amélie Doucet — Strategist, Storyteller, Dot-Connector</title>
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg: #000000;
+            --text: #ffffff;
+            --text-light: #cccccc;
+            --border: rgba(255, 255, 255, 0.15);
+            --coral-pink: #ff5f6d;
+            --dandelion: #ffd60a;
+            --corporate-blue: #0096ff;
+            --maxw: 1000px;
+            --gap: 1.6rem;
+        }
+
+        /* Base Reset */
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        p {
+            margin: 0;
+            color: var(--text-light);
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        a {
+            color: var(--coral-pink);
+            text-decoration: none;
+            transition: color 0.2s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: var(--dandelion);
+        }
+
+        /* Container */
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 2rem 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem 0;
+            border-bottom: none;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
+        }
+
+        .nav-brand {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--dandelion);
+            font-style: italic;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            border-bottom: none;
+            padding-bottom: 0;
+            transition: all 0.2s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--dandelion);
+            border-bottom: none;
+        }
+
+        .nav-cta {
+            background: var(--coral-pink);
+            color: black !important;
+            padding: 0.4rem 0.9rem;
+            border-radius: 0;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .nav-cta:hover {
+            background: var(--dandelion);
+            color: black !important;
+            transform: scale(1.05);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 100px;
+        }
+
+        section:first-of-type {
+            margin-top: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--dandelion);
+            letter-spacing: 0.05em;
+            margin: 0 0 1.5rem 0;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        h2::before {
+            content: '';
+            display: none;
+        }
+
+        /* Homepage / Hero */
+        .hero {
+            margin-bottom: 5rem;
+            margin-top: 1rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin: 0 0 0.3rem 0;
+            line-height: 0.95;
+            color: var(--text);
+            font-style: italic;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--corporate-blue);
+            margin-bottom: 2rem;
+            max-width: 50ch;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .cta-primary {
+            background: var(--coral-pink);
+            color: black !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .cta-primary:hover {
+            background: var(--dandelion);
+            transform: scale(1.05);
+        }
+
+        .cta-secondary {
+            color: var(--corporate-blue) !important;
+            padding-bottom: 0;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .cta-secondary:hover {
+            color: var(--dandelion) !important;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 70ch;
+            line-height: 1.8;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .pronunciation {
+            color: var(--dandelion);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        /* Work Section */
+        .work-grid {
+            display: grid;
+            gap: 2.5rem;
+        }
+
+        .work-item {
+            padding-left: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .work-item:hover {
+            transform: translateX(4px);
+        }
+
+        .work-item h3 {
+            font-size: 1rem;
+            margin: 0 0 0.2rem 0;
+            color: var(--coral-pink);
+            font-weight: 400;
+        }
+
+        .work-item .company {
+            font-size: 0.85rem;
+            color: var(--dandelion);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .work-item .description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .work-item .dates {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.04em;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--gap);
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: transparent;
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 260px;
+            transition: transform 0.2s ease, outline 0.2s ease, background 0.2s ease;
+            outline: 1px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            outline: 1px solid var(--coral-pink);
+            background: rgba(255, 95, 109, 0.03);
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin: 0 0 0.8rem 0;
+            color: var(--dandelion);
+            font-weight: 400;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card a {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: var(--gap);
+            margin-top: 1.5rem;
+        }
+
+        .skill-card {
+            background: transparent;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 180px;
+            transition: transform 0.2s ease, outline 0.2s ease, background 0.2s ease;
+            outline: 1px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: scale(1.05);
+            outline: 1px solid var(--dandelion);
+            background: rgba(255, 214, 10, 0.03);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--corporate-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 0.9rem;
+            margin: 0;
+            color: var(--coral-pink);
+            font-weight: 400;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-text {
+            max-width: 50ch;
+        }
+
+        .contact-text p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact-list a {
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-cta {
+            background: var(--corporate-blue);
+            color: black !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 0;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .contact-cta:hover {
+            background: var(--dandelion);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .nav-menu {
+                gap: 1rem;
+                flex-wrap: wrap;
+                order: 2;
+                width: 100%;
+            }
+
+            .wrap {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wrap {
+                padding: 1rem 1rem;
+            }
+
+            nav {
+                margin-bottom: 1rem;
+                padding: 0.8rem 0;
+            }
+
+            .nav-menu {
+                gap: 0.8rem;
+            }
+
+            .nav-menu a {
+                font-size: 0.7rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 0.95rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                margin-bottom: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="wrap">
+        <div class="nav-brand">Geneviève Doucet</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact" class="nav-cta">Resume</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="wrap">
+        <!-- Home Section -->
+        <section class="hero" id="home">
+            <h1>Geneviève Amélie Doucet</h1>
+            <p class="tagline">part strategist, part storyteller, part dot-connector.</p>
+            <div class="cta-group">
+                <a href="#work" class="cta-primary">view my work</a>
+                <a href="#contact" class="cta-secondary">let's connect</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>Hi! I'm Geneviève <span class="pronunciation">(john-vee-ev)</span>, and I'm currently a student at Northwestern University pursuing my Master's in Integrated Marketing Communications.</p>
+                <p style="margin-top: 1rem;">As a storyteller, I am passionate about creative advertising and branding, creating narratives for companies and people. My unique experiences in finance, social media, out-of-home advertising, and live event production have taught me to creatively problem-solve and connect dots with an out-of-the-box mentality, tenacity, and humor.</p>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work">
+            <h2>Work</h2>
+            <div class="work-grid">
+                <div class="work-item">
+                    <div class="company">Company Name</div>
+                    <h3>Role Title</h3>
+                    <p class="description">One punchy line describing what you did and why it mattered.</p>
+                    <p class="dates">2024 – Present</p>
+                </div>
+
+                <div class="work-item">
+                    <div class="company">Previous Company</div>
+                    <h3>Previous Role</h3>
+                    <p class="description">A meaningful line about the impact you made in this role.</p>
+                    <p class="dates">2023 – 2024</p>
+                </div>
+
+                <div class="work-item">
+                    <div class="company">Earlier Experience</div>
+                    <h3>Another Position</h3>
+                    <p class="description">How you contributed to this organization and what you learned.</p>
+                    <p class="dates">2022 – 2023</p>
+                </div>
+
+                <div class="work-item">
+                    <div class="company">Foundation Role</div>
+                    <h3>First Professional Role</h3>
+                    <p class="description">Where it all started—the role that taught you something fundamental.</p>
+                    <p class="dates">2021 – 2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="card">
+                    <h3>Project Title One</h3>
+                    <p>A compelling description of the project, what problem it solved, and what made it interesting or different. Keep it punchy and narrative-driven.</p>
+                    <a href="#">View project →</a>
+                </div>
+
+                <div class="card">
+                    <h3>Project Title Two</h3>
+                    <p>What was the challenge? How did you approach it? What was the outcome? Let the story shine through the description.</p>
+                    <a href="#">View project →</a>
+                </div>
+
+                <div class="card">
+                    <h3>Project Title Three</h3>
+                    <p>Showcase a project that demonstrates your range—whether it's a campaign, a campaign, or a strategic initiative. Make it memorable.</p>
+                    <a href="#">View project →</a>
+                </div>
+
+                <div class="card">
+                    <h3>Project Title Four</h3>
+                    <p>This could be a passion project, a pro-bono effort, or a particularly creative moment. Show what excites you beyond the job title.</p>
+                    <a href="#">View project →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Strategy</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">✍️</div>
+                    <h3>Storytelling</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <h3>Campaign Development</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3>Social Media</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Creative Direction</h3>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🔗</div>
+                    <h3>Brand Building</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>Let's connect. Whether you have a project in mind, want to grab coffee, or just want to chat about storytelling and strategy—I'm all in.</p>
+                </div>
+                <div>
+                    <ul class="contact-list">
+                        <li><a href="mailto:your.email@example.com">📧 your.email@example.com</a></li>
+                        <li><a href="https://www.linkedin.com/in/genevieve-doucet/?skipRedirect=true" target="_blank">🔗 LinkedIn Profile</a></li>
+                    </ul>
+                    <a href="#" class="contact-cta">⬇️ Download Resume</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="wrap">
+        <p>© 2026 Geneviève Amélie Doucet. All rights reserved.</p>
+    </footer>
+</body>
+</html>
