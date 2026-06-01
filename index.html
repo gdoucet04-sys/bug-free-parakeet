@@ -286,99 +286,59 @@
             letter-spacing: 0.04em;
         }
 
-        /* Projects Section */
-        .projects-grid {
+        /* Education Section */
+        .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--gap);
-            margin-top: 1.5rem;
+            gap: 2.5rem;
         }
 
-        .card {
-            background: transparent;
-            padding: 1.8rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 260px;
-            transition: transform 0.2s ease, outline 0.2s ease, background 0.2s ease;
-            outline: 1px solid transparent;
+        .education-item {
+            padding-left: 1.5rem;
+            transition: transform 0.2s ease;
             text-align: center;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            outline: 1px solid var(--coral-pink);
-            background: rgba(255, 95, 109, 0.03);
+        .education-item:hover {
+            transform: translateX(4px);
         }
 
-        .card h3 {
+        .education-item h3 {
             font-size: 1rem;
-            margin: 0 0 0.8rem 0;
+            margin: 0 0 0.2rem 0;
+            color: var(--coral-pink);
+            font-weight: 400;
+        }
+
+        .education-item .school {
+            font-size: 0.85rem;
             color: var(--dandelion);
             font-weight: 400;
-        }
-
-        .card p {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        .card a {
-            align-self: center;
-            font-size: 0.75rem;
-            font-weight: 400;
-            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
             text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .education-item .description {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .education-item .dates {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.04em;
         }
 
         /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: var(--gap);
-            margin-top: 1.5rem;
-        }
-
-        .skill-card {
-            background: transparent;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        .skills-content {
+            max-width: 70ch;
+            line-height: 1.8;
+            color: var(--text-light);
+            font-size: 1rem;
+            margin: 0 auto;
             text-align: center;
-            min-height: 180px;
-            transition: transform 0.2s ease, outline 0.2s ease, background 0.2s ease;
-            outline: 1px solid transparent;
-        }
-
-        .skill-card:hover {
-            transform: scale(1.05);
-            outline: 1px solid var(--dandelion);
-            background: rgba(255, 214, 10, 0.03);
-        }
-
-        .skill-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--corporate-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 0.8rem;
-            font-size: 1.5rem;
-        }
-
-        .skill-card h3 {
-            font-size: 0.9rem;
-            margin: 0;
-            color: var(--coral-pink);
-            font-weight: 400;
         }
 
         /* Contact Section */
@@ -486,14 +446,6 @@
                 gap: 2rem;
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
             .about-content {
                 font-size: 0.95rem;
             }
@@ -530,10 +482,6 @@
                 font-size: 1.1rem;
             }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
             section {
                 margin-bottom: 3rem;
             }
@@ -548,7 +496,7 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#contact" class="nav-cta">Resume</a></li>
@@ -560,7 +508,7 @@
         <!-- Home Section -->
         <section class="hero" id="home">
             <h1>Geneviève Amélie Doucet</h1>
-            <p class="tagline">part strategist, part storyteller, part dot-connector.</p>
+            <p class="tagline">strategist, storyteller, dot-connector.</p>
             <div class="cta-group">
                 <a href="#work" class="cta-primary">view my work</a>
                 <a href="#contact" class="cta-secondary">let's connect</a>
@@ -571,8 +519,8 @@
         <section id="about">
             <h2>About</h2>
             <div class="about-content">
-                <p>Hi! I'm Geneviève <span class="pronunciation">(john-vee-ev)</span>, and I'm currently a student at Northwestern University pursuing my Master's in Integrated Marketing Communicatio[...]
-                <p style="margin-top: 1rem;">As a storyteller, I am passionate about creative advertising and branding, creating narratives for companies and people. My unique experiences in finance, [...]
+                <p>i'm geneviève <span class="pronunciation">(john-vee-ev)</span> — an imc grad student at Northwestern with a background that tends to confuse people in the best way. i've managed film budgets, analyzed bond markets, migrated email archives, and studied global business in Stockholm. what ties it together: i'm always looking for the story underneath the data and the strategy underneath the story. i'm drawn to the space where brand, technology, and human behavior intersect — and i'm building the toolkit to work there intentionally.</p>
+                <p style="margin-top: 1rem;">when i'm not in strategy mode: wakeboarding, surfing, running, baking, or deep in a book. usually all of the above, never in moderation.</p>
             </div>
         </section>
 
@@ -581,61 +529,44 @@
             <h2>Work</h2>
             <div class="work-grid">
                 <div class="work-item">
-                    <div class="company">Company Name</div>
-                    <h3>Role Title</h3>
-                    <p class="description">One punchy line describing what you did and why it mattered.</p>
-                    <p class="dates">2024 – Present</p>
+                    <div class="company">Lamar Advertising</div>
+                    <h3>Marketing Services & Communications Intern</h3>
+                    <p class="dates">june – august 2025 · baton rouge, la</p>
+                    <p class="description">helped migrate 1,000+ legacy emails from Pardot to HubSpot, built out Google Ads strategy, and researched the AI search landscape to guide future adoption. learned that out-of-home and digital aren't opposites, but a conversation.</p>
                 </div>
 
                 <div class="work-item">
-                    <div class="company">Previous Company</div>
-                    <h3>Previous Role</h3>
-                    <p class="description">A meaningful line about the impact you made in this role.</p>
-                    <p class="dates">2023 – 2024</p>
+                    <div class="company">Frames Per Second</div>
+                    <h3>Treasurer</h3>
+                    <p class="dates">may 2024 – june 2025 · boston, ma</p>
+                    <p class="description">managed a $17K production budget across two films — negotiating between funding sources, tracking every dollar, and proving that creative people can absolutely run a spreadsheet.</p>
                 </div>
 
                 <div class="work-item">
-                    <div class="company">Earlier Experience</div>
-                    <h3>Another Position</h3>
-                    <p class="description">How you contributed to this organization and what you learned.</p>
-                    <p class="dates">2022 – 2023</p>
-                </div>
-
-                <div class="work-item">
-                    <div class="company">Foundation Role</div>
-                    <h3>First Professional Role</h3>
-                    <p class="description">Where it all started—the role that taught you something fundamental.</p>
-                    <p class="dates">2021 – 2022</p>
+                    <div class="company">Doucet Asset Management</div>
+                    <h3>Intern</h3>
+                    <p class="dates">may – august 2024 · new orleans, la</p>
+                    <p class="description">co-authored a market newsletter, built client-facing investment recommendation decks, and got a very thorough education in bond markets. the analytical instincts stuck.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="card">
-                    <h3>Project Title One</h3>
-                    <p>A compelling description of the project, what problem it solved, and what made it interesting or different. Keep it punchy and narrative-driven.</p>
-                    <a href="#">View project →</a>
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <div class="school">Northwestern University</div>
+                    <h3>MS, Integrated Marketing Communications</h3>
+                    <p class="dates">september 2025 – present · evanston, il</p>
+                    <p class="description">concentrations in brand management and data insights & analytics. currently consulting for P33 Chicago through the Cause Marketing Initiative, conducting primary research and shaping communications strategy for a multi-phase project.</p>
                 </div>
 
-                <div class="card">
-                    <h3>Project Title Two</h3>
-                    <p>What was the challenge? How did you approach it? What was the outcome? Let the story shine through the description.</p>
-                    <a href="#">View project →</a>
-                </div>
-
-                <div class="card">
-                    <h3>Project Title Three</h3>
-                    <p>Showcase a project that demonstrates your range—whether it's a campaign, a campaign, or a strategic initiative. Make it memorable.</p>
-                    <a href="#">View project →</a>
-                </div>
-
-                <div class="card">
-                    <h3>Project Title Four</h3>
-                    <p>This could be a passion project, a pro-bono effort, or a particularly creative moment. Show what excites you beyond the job title.</p>
-                    <a href="#">View project →</a>
+                <div class="education-item">
+                    <div class="school">Emerson College</div>
+                    <h3>BA, Business of Creative Enterprises</h3>
+                    <p class="dates">september 2022 – june 2025 · boston, ma</p>
+                    <p class="description">3.8 GPA, dean's list every semester. studied abroad in stockholm. wrote for a magazine, ran student radio, danced, consulted, oriented new students, and somehow graduated with honors.</p>
                 </div>
             </div>
         </section>
@@ -643,36 +574,8 @@
         <!-- Skills Section -->
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">📊</div>
-                    <h3>Strategy</h3>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">✍️</div>
-                    <h3>Storytelling</h3>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">🎯</div>
-                    <h3>Campaign Development</h3>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">📱</div>
-                    <h3>Social Media</h3>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">🎨</div>
-                    <h3>Creative Direction</h3>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-icon">🔗</div>
-                    <h3>Brand Building</h3>
-                </div>
+            <div class="skills-content">
+                <p>fluent across the full marketing stack. certified in HubSpot, Salesforce, and content marketing. comfortable in Canva, Adobe Premiere, Photoshop, Pardot, R, and SQL. experienced in qualitative research, marketing analytics, and CRM. equally at home writing a campaign brief or pulling a data model.</p>
             </div>
         </section>
 
@@ -681,12 +584,12 @@
             <h2>Contact</h2>
             <div class="contact-content">
                 <div class="contact-text">
-                    <p>Let's connect. Whether you have a project in mind, want to grab coffee, or just want to chat about storytelling and strategy—I'm all in.</p>
+                    <p>let's connect. whether you have a project in mind, want to grab coffee, or just want to chat about storytelling and strategy — i'm all in.</p>
                 </div>
                 <div>
                     <ul class="contact-list">
                         <li><a href="mailto:your.email@example.com">📧 your.email@example.com</a></li>
-                        <li><a href="https://www.linkedin.com/in/genevieve-doucet/?skipRedirect=true" target="_blank">🔗 LinkedIn Profile</a></li>
+                        <li><a href="https://www.linkedin.com/in/genevieve-doucet/?skipRedirect=true" target="_blank">🔗 linkedin</a></li>
                     </ul>
                     <a href="#" class="contact-cta">⬇️ Download Resume</a>
                 </div>
